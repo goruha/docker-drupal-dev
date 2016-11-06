@@ -5,7 +5,7 @@ RUN echo 'http://alpine.gliderlabs.com/alpine/edge/main' > /etc/apk/repositories
     echo 'http://alpine.gliderlabs.com/alpine/edge/community' >> /etc/apk/repositories && \
     echo 'http://alpine.gliderlabs.com/alpine/edge/testing' >> /etc/apk/repositories && \
     apk update && apk add --update \
-      git \
+     git \
      php5-xdebug \
 	  && rm -rf /var/cache/apk/*
 
@@ -14,3 +14,19 @@ RUN  curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/loca
 
      # Add composer parallel install plugin
 RUN  composer global require "hirak/prestissimo:^0.3"
+
+RUN  composer global require \
+      "phing/phing:*" \
+      "pdepend/pdepend:*" \
+      "pear/archive_tar:*" \
+      "pear/versioncontrol_svn:*" \
+      "pear/versioncontrol_git:@dev" \
+      "phpdocumentor/phpdocumentor:*" \
+      "phploc/phploc:*" \
+      "phpmd/phpmd:*" \
+      "phpunit/php-code-coverage:*" \
+      "phpunit/phpunit:*" \
+      "sebastian/phpcpd:*" \
+      "siad007/versioncontrol_hg:*" \
+      "tedivm/jshrink:*" \
+      "drupal/coder:*"
