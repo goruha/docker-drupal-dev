@@ -6,6 +6,7 @@ RUN echo 'http://alpine.gliderlabs.com/alpine/edge/main' > /etc/apk/repositories
     echo 'http://alpine.gliderlabs.com/alpine/edge/testing' >> /etc/apk/repositories && \
     apk update && apk add --update \
      git \
+     subversion \
      php5-xdebug \
 	  && rm -rf /var/cache/apk/*
 
