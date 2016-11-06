@@ -12,6 +12,8 @@ RUN echo 'http://alpine.gliderlabs.com/alpine/edge/main' > /etc/apk/repositories
       # Install composer
 RUN  curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+RUN export PATH=~/.composer/vendor/bin:$PATH
+
      # Add composer parallel install plugin
 RUN  composer global require "hirak/prestissimo:^0.3"
 
