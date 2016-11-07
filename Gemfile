@@ -4,5 +4,3 @@ source 'https://rubygems.org'
 group :default do
   gem 'travis', '~> 1.8', '>= 1.8.2'
 end
-
-
